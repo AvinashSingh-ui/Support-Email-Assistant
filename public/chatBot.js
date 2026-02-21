@@ -1,6 +1,6 @@
 (function () {
 
-    const api_Url = "https://support-ai-tau.vercel.app/api/chat"
+    const api_Url = "https://support-email-assistant-z334.vercel.app/api/chat"
 
     const scriptTag = document.currentScript;
     const ownerId = scriptTag.getAttribute("data-owner-id")
@@ -167,12 +167,12 @@ sendBtn.onclick=async ()=>{
 
     const data=await response.json()
     messageArea.removeChild(typing)
-    addMessage(data|| "something went wrong","ai")
+    addMessage(data.answer|| "something went wrong","ai")
 
 } catch (error) {
     console.log(error)
     messageArea.removeChild(typing)
-    addMessage(data|| "something went wrong","ai")
+    addMessage("Something went wrong","ai")
 }
 }
 
